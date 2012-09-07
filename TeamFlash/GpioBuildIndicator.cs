@@ -4,14 +4,14 @@ using RaspberryPiDotNet;
 
 namespace TeamFlash
 {
-	public class BuildIndicator : IBuildIndicator
+	public class GpioBuildIndicator : IBuildIndicator
 	{
 		GPIO greenPin;
 		GPIO redPin;
 		GPIO yellowPin;
 		Thread flashingThread;
 
-		public BuildIndicator ()
+		public GpioBuildIndicator ()
 		{
 			greenPin = new GPIOMem (GPIO.GPIOPins.GPIO00);
 			redPin = new GPIOMem (GPIO.GPIOPins.GPIO01);
