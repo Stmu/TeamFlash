@@ -29,16 +29,16 @@ namespace TeamFlash
             this.document = document;
         }
 
-        public string RestBasePath = @"/httpAuth/app/rest/";
-        const string ExistsKeyword = "exists";
+        private const string restBasePath = @"/httpAuth/app/rest/";
+        private const string existsKeyword = "exists";
 
         public override bool TryGetMember(GetMemberBinder binder, out object result)
         {
             var bindingName = binder.Name.Replace("_", "-").ToLower();
 
-            if (bindingName.EndsWith(ExistsKeyword))
+            if (bindingName.EndsWith(existsKeyword))
             {
-                bindingName = bindingName.Substring(0, bindingName.Length - ExistsKeyword.Length);
+                bindingName = bindingName.Substring(0, bindingName.Length - existsKeyword.Length);
 
                 object unusedResult;
                 result = TryFind(bindingName, out unusedResult);
@@ -52,7 +52,7 @@ namespace TeamFlash
         {
             if (document == null)
             {
-                var queryUrl = baseUrl + RestBasePath + bindingName;
+                var queryUrl = baseUrl + restBasePath + bindingName;
                 document = Retrieve(queryUrl);
                 result = new Query(baseUrl, username, password, document);
                 return true;
@@ -198,7 +198,7 @@ namespace TeamFlash
             try
             {
                 using (var stream = client.OpenRead(queryUrl))
-                using (var reader = XmlReader.Create(stream, new XmlReaderSettings() { DtdProcessing = DtdProcessing.Ignore }))
+                using (var reader = XmlReader.Create(stream, new XmlReaderSettings { DtdProcessing = DtdProcessing.Ignore }))
                 {
                     return XDocument.Load(reader);
                 }

@@ -1,7 +1,3 @@
-using System;
-using System.Threading;
-using RaspberryPiDotNet;
-
 namespace TeamFlash
 {
 	public interface IBuildIndicator

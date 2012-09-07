@@ -4,7 +4,7 @@ namespace TeamFlash
 {
 	public class UsbLightBuildIndicator : IBuildIndicator
 	{
-		Monitor monitor;
+	    private readonly Monitor monitor;
 
 		public UsbLightBuildIndicator ()
 		{
