@@ -46,11 +46,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BuildStatus.cs" />
-    <Compile Include="DelcomBuildIndicator.cs" />
     <Compile Include="Monitor.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Query.cs" />
+    <Compile Include="DelcomUsbLight.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 
 namespace TeamFlash
 {
-    class DelcomBuildIndicator
+    class DelcomUsbLight
     {
         // Delcom USB Devices
         public const uint USBIODS = 1;
