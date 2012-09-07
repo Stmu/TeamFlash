@@ -64,6 +64,7 @@ namespace TeamFlash
 					} else {
 						Light (off);
 					}
+					isOn = !isOn;
 					Thread.Sleep (1000);
 				}
 			}
