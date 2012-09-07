@@ -3,6 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeamFlash", "TeamFlash\TeamFlash.csproj", "{E76813EF-60AD-4955-A273-C2A235DFE9FC}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dependencies", "Dependencies", "{E9BBFB18-C0B6-4B6E-A1EA-AD96082342EA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RaspberryPi.Net", "RaspberryPi.Net", "{4431E031-0C56-480A-8F02-09A020FCF7A0}"
+	ProjectSection(SolutionItems) = preProject
+		Dependencies\RaspberryPi.Net\lib\RaspberryPiDotNet.dll = Dependencies\RaspberryPi.Net\lib\RaspberryPiDotNet.dll
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -13,6 +20,12 @@ Global
 		{E76813EF-60AD-4955-A273-C2A235DFE9FC}.Debug|x86.Build.0 = Debug|x86
 		{E76813EF-60AD-4955-A273-C2A235DFE9FC}.Release|x86.ActiveCfg = Release|x86
 		{E76813EF-60AD-4955-A273-C2A235DFE9FC}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4431E031-0C56-480A-8F02-09A020FCF7A0} = {E9BBFB18-C0B6-4B6E-A1EA-AD96082342EA}
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = TeamFlash\TeamFlash.csproj
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
