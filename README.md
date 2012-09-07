@@ -1,8 +1,10 @@
 # TeamFlash
 
-TeamFlash is a super simple tool for connecting TeamCity to a Delcom USB build light.
+TeamFlash is a super simple tool for connecting TeamCity to a build light that can run on a PC or on your Raspberry Pi!
 
 It's tested with the [Delcom 904003](http://www.delcomproducts.com/productdetails.asp?productnum=904003) and [Delcom 804003](http://www.delcomproducts.com/productdetails.asp?productnum=804003) (old generation).
+
+If you're on the Pi it can use LEDs hooked up to the GPIO pins.
 
 ## Installing
 
@@ -12,6 +14,8 @@ It's tested with the [Delcom 904003](http://www.delcomproducts.com/productdetail
 
 ## Outputs
 
+### USB Light
+
 <dl>
   <dt>Red</dt>
   <dd>one or more builds are broken, and not being investigated</dd>
@@ -19,6 +23,32 @@ It's tested with the [Delcom 904003](http://www.delcomproducts.com/productdetail
   <dd>all builds are either under investigation (requires TeamCity 7.1), or passing</dd>
   <dt>Green</dt>
   <dd>all builds are passing</dd>
+</dl>
+
+### GPIO LEDs
+
+LED - Pin Assignments:
+<dl>
+  <dt>GPIO 00</dt>
+  <dd>Green</dd>
+  <dt>GPIO 01</dt>
+  <dd>Red</dd>
+  <dt>GPIO 04</dt>
+  <dd>Yello</dd>
+</dl>
+
+States:
+<dl>
+  <dt>Red (solid)</dt>
+  <dd>one or more builds are broken, and not being investigated</dd>
+  <dt>Red - Yellow flashing</dt>
+  <dd>all builds are either under investigation (requires TeamCity 7.1), or passing</dd>
+  <dt>Green</dt>
+  <dd>all builds are passing</dd>
+  <dt>Red (flashing)</dt>
+  <dd>the build service is unavailable or there was an error with communications</dd>
+  <dt>Red + Green + Yellow (solid)</dt>
+  <dd>something really funky is going on...</dd>
 </dl>
 
 Paused builds are ignored.
