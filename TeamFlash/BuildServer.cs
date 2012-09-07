@@ -4,21 +4,21 @@ using System.Collections.Generic;
 
 namespace TeamFlash
 {
-	public class BuildServer
-	{
-		string serverUrl;
-		string username;
-		string password;
+    public class BuildServer
+    {
+        private readonly string serverUrl;
+        private readonly string username;
+        private readonly string password;
 
-		public BuildServer ()
-		{
-			serverUrl = ConfigurationManager.AppSettings["serverUrl"];
-			username = ConfigurationManager.AppSettings["username"];
-			password = ConfigurationManager.AppSettings["password"];
-		}
+        public BuildServer()
+        {
+            serverUrl = ConfigurationManager.AppSettings["serverUrl"];
+            username = ConfigurationManager.AppSettings["username"];
+            password = ConfigurationManager.AppSettings["password"];
+        }
 
-		public BuildStatus GetLastBuildStatus (out List<string> buildTypeNames)
-		{			
+        public BuildStatus GetLastBuildStatus(out List<string> buildTypeNames)
+        {
             dynamic query = new Query(serverUrl, username, password);
             buildTypeNames = null;
 
@@ -74,9 +74,9 @@ namespace TeamFlash
 
                         var buildId = buildType.Id;
                         dynamic investigationQuery = new Query(serverUrl, username, password);
-                        investigationQuery.RestBasePath = @"/httpAuth/app/rest/buildTypes/id:" + buildId +@"/";
+                        investigationQuery.RestBasePath = @"/httpAuth/app/rest/buildTypes/id:" + buildId + @"/";
                         buildStatus = BuildStatus.Failed;
-             
+
                         foreach (var investigation in investigationQuery.Investigations)
                         {
                             var investigationState = investigation.State;
@@ -101,7 +101,7 @@ namespace TeamFlash
             }
 
             return buildStatus;
-		}
-	}
+        }
+    }
 }
 
