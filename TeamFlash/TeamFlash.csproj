@@ -58,10 +58,17 @@
     <Compile Include="BuildServer.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
-    <None Include="DelcomDLL.dll">
+    <None Include="..\Dependencies\bcm2835\lib\libbcm2835.so">
+      <Link>libbcm2835.so</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\Dependencies\Delcom\lib\DelcomDLL.dll">
+      <Link>DelcomDLL.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

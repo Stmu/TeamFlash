@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeamFlash", "TeamFlash\TeamFlash.csproj", "{E76813EF-60AD-4955-A273-C2A235DFE9FC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dependencies", "Dependencies", "{E9BBFB18-C0B6-4B6E-A1EA-AD96082342EA}"
@@ -8,6 +8,16 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RaspberryPi.Net", "RaspberryPi.Net", "{4431E031-0C56-480A-8F02-09A020FCF7A0}"
 	ProjectSection(SolutionItems) = preProject
 		Dependencies\RaspberryPi.Net\lib\RaspberryPiDotNet.dll = Dependencies\RaspberryPi.Net\lib\RaspberryPiDotNet.dll
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "bcm2835", "bcm2835", "{59BE10AE-6553-428C-9BDB-BEED2724B6F4}"
+	ProjectSection(SolutionItems) = preProject
+		Dependencies\bcm2835\lib\libbcm2835.so = Dependencies\bcm2835\lib\libbcm2835.so
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Delcom", "Delcom", "{D9289E85-726B-41D6-A772-F14DA3EC8BB5}"
+	ProjectSection(SolutionItems) = preProject
+		Dependencies\Delcom\lib\DelcomDLL.dll = Dependencies\Delcom\lib\DelcomDLL.dll
 	EndProjectSection
 EndProject
 Global
@@ -21,13 +31,15 @@ Global
 		{E76813EF-60AD-4955-A273-C2A235DFE9FC}.Release|x86.ActiveCfg = Release|x86
 		{E76813EF-60AD-4955-A273-C2A235DFE9FC}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{4431E031-0C56-480A-8F02-09A020FCF7A0} = {E9BBFB18-C0B6-4B6E-A1EA-AD96082342EA}
+		{59BE10AE-6553-428C-9BDB-BEED2724B6F4} = {E9BBFB18-C0B6-4B6E-A1EA-AD96082342EA}
+		{D9289E85-726B-41D6-A772-F14DA3EC8BB5} = {E9BBFB18-C0B6-4B6E-A1EA-AD96082342EA}
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = TeamFlash\TeamFlash.csproj
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 EndGlobal
