@@ -2,7 +2,7 @@ using System;
 using System.Threading;
 using RaspberryPiDotNet;
 
-namespace TeamFlash
+namespace TeamFlash.RaspberryPi
 {
     public class GpioBuildIndicator : IBuildIndicator
     {
