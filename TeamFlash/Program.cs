@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Threading;
 using System.Xml.Serialization;
 
@@ -9,7 +10,7 @@ namespace TeamFlash
 {
     class Program
     {
-        static void Main()
+        static void Main(string[] args)
         {
             var teamFlashConfig = LoadConfig();
 
@@ -26,11 +27,21 @@ namespace TeamFlash
                 ? new string[0]
                 : teamFlashConfig.BuildTypeIds.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries).ToArray();
 
+            IBuildLight buildLight;
+            if (args.Length == 0)
+            {
 #if __MonoCS__
-            var buildLight = new Linux.BuildLight();
+                buildLight = new Linux.BuildLight();
 #else
-            var buildLight = new BuildLight();
+                buildLight = new BuildLight();
 #endif
+            }
+            else
+            {
+                var type = Assembly.GetExecutingAssembly().GetType(args[0]);
+                var constructor = type.GetConstructor(new Type[0]);
+                buildLight = constructor.Invoke(new object[0]) as IBuildLight;
+            }
 
             buildLight.Off();
 
